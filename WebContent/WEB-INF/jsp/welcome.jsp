@@ -25,7 +25,7 @@ th {
 }
 </style>
     </head>
-<form action="result.jsp">
+<form method="post" action="WayOfBeingResults">
 ${message}
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
@@ -281,7 +281,8 @@ ${message}
 </table>
     
     <br><br><br>
+    <a href="WayOfBeingResults">Click here for results.. </a> <br>		
     <!-- <input type="button" value="Submit" onclick=drawChart() />-->
-  <input type="submit" value="Submit" onclick=drawChart() />
+  <input type="submit" value="Submit" />
 </form>
 </html>
