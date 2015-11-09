@@ -26,7 +26,7 @@ h1 {
 		<br>
 		<br>
 		<h3>
-			<a href="welcome.jsp">Click here to take the survey... </a>			
+			<a href="userInfo.jsp">Click here to take the survey... </a>
 		</h3>
 	</div>
 </body>
