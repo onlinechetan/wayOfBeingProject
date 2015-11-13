@@ -1,12 +1,20 @@
+<% 
+out.print("Test print");
+out.print(request.getAttribute("userResult"));
+System.out.print("userResult is: "+request.getAttribute("userResult"));
+
+%>
 <html>
 <h2>This is result</h2>
+
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['ID', 'Purpose', 'Presence',{ role: 'style' }],          
+          ['ID', 'Purpose', 'Presence',{ role: 'style' }],
           ['',   79,  136,'color: #76A7FA'],
           ['',   78,  184,'color: #76A7FA'],
           ['',   72,  278,'color: #76A7FA'],
@@ -42,6 +50,9 @@
 
 
     <div id="chart_div" style="width: 900px; height: 500px; background-image:url("pic_mountain.jpg")></div>
-<form action="/WayOfBeingResults" method="post"></form>
+<form action="/WayOfBeingResults" method="post">
+
+</form>
+
   <input type="Submit" value="Submit" />
 </html>

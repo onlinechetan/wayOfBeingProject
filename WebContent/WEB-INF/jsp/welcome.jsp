@@ -241,7 +241,6 @@ ${message}
     
     <br><br><br>
     <a href="WayOfBeingResults">Click here for results.. </a> <br>		
-    <!-- <input type="button" value="Submit" onclick=drawChart() />-->
   <input type="submit" value="Submit" />
 </form>
 </html>

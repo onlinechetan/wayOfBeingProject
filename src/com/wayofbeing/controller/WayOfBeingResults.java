@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Servlet implementation class WayOfBeingResults
  */
@@ -32,7 +35,6 @@ public class WayOfBeingResults extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("in doPost"); //updated2 successfully.
-//		doGet(request, response);
 		//store the results and pass in the user result to display in the results page.
 		Map<String, String[]> requestParams = request.getParameterMap();
 		
@@ -42,6 +44,20 @@ public class WayOfBeingResults extends HttpServlet {
 			System.out.println("Param iter is: " + param);
 			System.out.println(" parameter name is: "+request.getParameter(param));
 			System.out.println(" parameter is: "+request.getParameter(param));
+			JSONObject userResult = new JSONObject();
+			try {
+				userResult.put("fullName","Chetan Saraf");
+				userResult.put("X", "80");
+				userResult.put("Y", "167");
+				userResult.put("color", "#99FFCC");
+				request.setAttribute("userResult",userResult);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+//			['Chetan',   80,  167,'color: #99FFCC']
+			
 		}
 		request.getRequestDispatcher("result.jsp").forward(request, response);
 	}
