@@ -15,7 +15,6 @@ alert(userResult);*/
 </script>
 <html>
 <h2>This is result</h2>
-<input type="text" name ="result"></input>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
@@ -38,17 +37,17 @@ alert(userResult);*/
 	    
 	    var arr1 = [];
 	    arr1[0] = str;
-	    alert("arr1[0] is: "+ arr1[0]);
+	    //alert("arr1[0] is: "+ arr1[0]);
 	    //$('result').value = "test";
 	      
 	      var results = []; 
 	      results.push(['ID', 'Purpose', 'Presence',{ role: 'style' }]);
-	      results.push(['Chetan Saraf', 80, 166,'color: #FFFFFF']);
+	      results.push(['', 80, 166,'color: #99FFCC']);
 	      results.push(result);
 	      //results.push("["+arr1[0]+"]");
 	      //results.push(str);
 	      
-	      alert("results[1] is: "+results[1]);
+	      //alert("results[1] is: "+results[1]);
 	      
 	      //results.push(result[0]);
  
