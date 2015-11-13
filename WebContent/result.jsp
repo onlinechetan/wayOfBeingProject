@@ -1,9 +1,20 @@
+<%@page import="org.json.JSONObject"%>
 <% 
 out.print("Test print");
 out.print(request.getAttribute("userResult"));
 System.out.print("userResult is: "+request.getAttribute("userResult"));
-
+Object userResult = request.getAttribute("userResult");
+out.print("Json object is: "+userResult);
 %>
+<script>
+var userResult=JSON.stringify(<%=userResult%>);
+//alert("userResult is: "+userResult);
+</script>
+
+<script>
+var userResult = request.getAttribute("userResult");
+//alert(userResult);
+</script>
 <html>
 <h2>This is result</h2>
 
@@ -13,7 +24,7 @@ System.out.print("userResult is: "+request.getAttribute("userResult"));
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
+        /*var data = google.visualization.arrayToDataTable([
           ['ID', 'Purpose', 'Presence',{ role: 'style' }],
           ['',   79,  136,'color: #76A7FA'],
           ['',   78,  184,'color: #76A7FA'],
@@ -22,7 +33,23 @@ System.out.print("userResult is: "+request.getAttribute("userResult"));
           ['',   72,  170,'color: #76A7FA'],
           ['',   68,  477,'color: #76A7FA'],
           ['Chetan',   80,  167,'color: #99FFCC']
-        ]);
+        ]);*/
+        
+        //fullName,X,Y,color
+        var parsed = JSON.parse(userResult);
+        var arr = [];
+        for(var x in parsed){
+        	if(x=="fullName") {
+        		alert("fullName found");
+        	}else {
+        		alert("No fullname: " +x);
+        	}
+          arr.push(parsed[x]);
+        }
+        
+        
+        
+        var data = google.visualization.arrayToDataTable(parsed);
 
         var options = {
           //colorAxis: {colors: ['yellow', 'red']},

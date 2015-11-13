@@ -1,7 +1,9 @@
 package com.wayofbeing.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -44,17 +46,18 @@ public class WayOfBeingResults extends HttpServlet {
 			System.out.println("Param iter is: " + param);
 			System.out.println(" parameter name is: "+request.getParameter(param));
 			System.out.println(" parameter is: "+request.getParameter(param));
-			JSONObject userResult = new JSONObject();
-			try {
-				userResult.put("fullName","Chetan Saraf");
-				userResult.put("X", "80");
-				userResult.put("Y", "167");
-				userResult.put("color", "#99FFCC");
-				request.setAttribute("userResult",userResult);
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			List userResult = new ArrayList<>();// ['Chetan',   80,  167,'color: #99FFCC']
+//				userResult.put("fullName","Chetan Saraf");
+//				userResult.put("X", 80);
+//				userResult.put("Y", 167);
+//				userResult.put("color", "color: #99FFCC");
+//				request.setAttribute("userResult",userResult);
+				
+				userResult.add("Chetan Saraf");
+				userResult.add(80);
+				userResult.add(167);
+				userResult.add("color: #99FFCC");
+				
 			
 //			['Chetan',   80,  167,'color: #99FFCC']
 			
