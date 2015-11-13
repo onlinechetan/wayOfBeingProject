@@ -54,8 +54,8 @@ public class WayOfBeingResults extends HttpServlet {
 				
 				
 				userResult.add("Chetan Saraf");
-				userResult.add(80);
-				userResult.add(167);
+				userResult.add(26);
+				userResult.add(31);
 				userResult.add("color: #99FFCC");
 				request.setAttribute("userResult",userResult);
 			
