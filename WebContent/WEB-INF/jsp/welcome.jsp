@@ -239,8 +239,8 @@ ${message}
   </tr>
 </table>
     
-    <br><br><br>
-    <a href="WayOfBeingResults">Click here for results.. </a> <br>		
+    <br>
+    <!-- <a href="WayOfBeingResults">Click here for results.. </a> <br> -->		
   <input type="submit" value="Submit" />
 </form>
 </html>

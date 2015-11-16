@@ -40,7 +40,7 @@ public class WayOfBeingResults extends HttpServlet {
 		//store the results and pass in the user result to display in the results page.
 		Map<String, String[]> requestParams = request.getParameterMap();
 		
-		
+		int x, y;
 		for(Iterator<String> paramIter =requestParams.keySet().iterator();paramIter.hasNext();) {
 			String param = paramIter.next();
 			System.out.println("Param iter is: " + param);
@@ -51,7 +51,6 @@ public class WayOfBeingResults extends HttpServlet {
 //				userResult.put("X", 80);
 //				userResult.put("Y", 167);
 //				userResult.put("color", "color: #99FFCC");
-				
 				
 				userResult.add("Chetan Saraf");
 				userResult.add(26);

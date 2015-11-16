@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
+ * Class renders the survey questions to the user.	
  * @author SarafC
  *
  */
 @Controller
-public class WayOfBeingHelloWorld {
+public class Survey {
 	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
+	public ModelAndView renderSurvey() {
 		
 		String message = "<br><div style='text-align:center;'>"
-				+ "<h3>********** Way of Being using Spring MVC</h3>This message is coming from WayOfBeingHelloWorld.java **********</div><br><br>";
+				+ "<h3>********** Way of Being using Spring MVC***********</h3></div><br>";
 		return new ModelAndView("welcome", "message", message);
-//return new ModelAndView("redirect:/survey.jsp");
 	}
 }

@@ -12,6 +12,15 @@
 	      var results = []; 
 	      results.push(['ID', 'Purpose', 'Presence',{ role: 'style' }]);
 	      results.push(['', 0, 0,'']);
+	      /*results.push(['Manoranjan', 55, 55,'']);
+	      results.push(['John', 30, 20,'']);
+	      results.push(['Alex', 45, 45,'']);
+	      results.push(['Satish', 15, 50,'']);
+	      results.push(['Saibal', 29, 49,'']);
+	      results.push(['Andrew', 19, 49,'']);
+	      results.push(['Jen', 39, 51,'']);
+	      results.push(['Cloudia', 25, 39,'']);
+	      results.push(['Chetan', 26, 31,'']);*/
 	      results.push(result);
         
         var data = google.visualization.arrayToDataTable(results);
@@ -46,7 +55,7 @@
 
         var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-        //var boundingBox = chart.getChartLayoutInterface().getChartAreaBoundingBox(); 
+        //var boundingBox = chart.getChartLayoutInterface().getChartAreaBoundingBox();
    	//$('#chartBackground').css('background-position', boundingBox.left + "px " + boundingBox.top + "px").css('background-size', boundingBox.width + "px " + boundingBox.height + "px");
       }
     </script>
