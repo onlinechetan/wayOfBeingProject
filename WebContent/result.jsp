@@ -27,7 +27,9 @@
         
         var options = {
         		
-        backgroundColor: {fill:'#DDE3E7'},
+        //backgroundColor: {fill:'#DDE3E7'},
+        title: 'Way of Being',
+        backgroundColor: 'none',
           //colorAxis: {colors: ['yellow', 'red']},
 		  //colorAxis: {colors: []}
 		  vAxis: {
@@ -47,9 +49,8 @@
 			  opacity:1.0
 		 },
 		 chartArea: {
-		    'backgroundColor': {
-		        'fill': '#F4F4F4'
-		     }
+		    //'backgroundColor': {'fill': '#F4F4F4'}
+		 	'backgroundColor': 'none'
 		 }
         };
 
@@ -62,11 +63,14 @@
 
 
 
-
-    <div id="chart_div" style="width: 1100px; height: 750px; background-image:url("pic_mountain.jpg")></div>
+<html>
+<div id="brand_div" style="width: 1200px; height: 800px; background:url(http://placekitten.com/g/1400/900) no-repeat;">
+    <div id="chart_div" style="width: 1100px; height: 750px;">
+    </div>
+</div>
+    
 <form action="/WayOfBeingResults" method="post">
-
 </form>
-
   <input type="Submit" value="Submit" />
+
 </html>
