@@ -1,5 +1,4 @@
 <html>
-<form method="post" action="welcome.jsp">
 <head>
 <title>Way of Being!!! </title>
 <style>
@@ -15,6 +14,8 @@ h1 {
 }
 </style>
 </head>
+<form method="post" action="welcome.jsp">
+
 <body bgcolor="#E6E6FA">
 	<br>
 	
@@ -30,12 +31,7 @@ h1 {
 </h1>
 
 <table>
-<tr>
-<td><label>Firt Name: </label></td><td><input type="text" name="fname" required/></td>
-</tr>
-<tr>
-<td><label>Last Name: </label></td><td><input type="text" name="lname" required/></td>
-</tr>
+
 <tr>
 <td><label>Email: </label></td><td><input type="email" name="email" required/></td>
 </tr>

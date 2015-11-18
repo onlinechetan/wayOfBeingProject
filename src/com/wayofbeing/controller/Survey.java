@@ -18,7 +18,7 @@ public class Survey {
 	public ModelAndView renderSurvey() {
 		
 		String message = "<br><div style='text-align:center;'>"
-				+ "<h3>********** Way of Being using Spring MVC***********</h3></div><br>";
+				+ "<h3>********** Way of Being ***********</h3></div><br>";
 		return new ModelAndView("welcome", "message", message);
 	}
 }
