@@ -34,11 +34,11 @@
 		  //colorAxis: {colors: []}
 		  vAxis: {
 			  	title: 'Presence Score',
-          		ticks: [10,20,30,40,50,60],
+          		ticks: [10,20,30,40,50,60,70,80,90],
 		        viewWindowMode:'maximized'
 		  },
 		  hAxis: { 
-			  	ticks: [10,20,30,40,50,60],
+			  	ticks: [10,20,30,40,50,60,70,80,90],
 		    	title: 'Purpose Score',
 		        slantedText: true,
 		        slantedTextAngle: 30,
@@ -49,7 +49,6 @@
 			  opacity:1.0
 		 },
 		 chartArea: {
-		    //'backgroundColor': {'fill': '#F4F4F4'}
 		 	'backgroundColor': 'none'
 		 }
         };
@@ -60,12 +59,11 @@
    	//$('#chartBackground').css('background-position', boundingBox.left + "px " + boundingBox.top + "px").css('background-size', boundingBox.width + "px " + boundingBox.height + "px");
       }
     </script>
-
-
-
 <html>
-<div id="brand_div" style="width: 1200px; height: 800px; background:url(http://placekitten.com/g/1400/900) no-repeat;">
-    <div id="chart_div" style="width: 1100px; height: 750px;">
+
+<!-- <div id="brand_div" style="width: 1200px; height: 800px; background:url(http://placekitten.com/g/1400/900) no-repeat;">-->
+<div id="brand_div" style="width: 1200px; height: 800px; background:url(images/backgroundImage.jpg) no-repeat;">
+    <div id="chart_div" style="width: 1200px; height: 800px;">
     </div>
 </div>
     
