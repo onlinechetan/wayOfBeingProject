@@ -26,7 +26,6 @@
         var data = google.visualization.arrayToDataTable(results);
         
         var options = {
-        		
         //backgroundColor: {fill:'#DDE3E7'},
         title: 'Way of Being',
         backgroundColor: 'none',
@@ -34,14 +33,16 @@
 		  //colorAxis: {colors: []}
 		  vAxis: {
 			  	title: 'Presence Score',
+			  	gridlines:{color: '#fefdfd'},
           		ticks: [10,20,30,40,50,60,70,80,90],
 		        viewWindowMode:'maximized'
 		  },
 		  hAxis: { 
 			  	ticks: [10,20,30,40,50,60,70,80,90],
 		    	title: 'Purpose Score',
+		    	gridlines:{color: '#fefdfd'},
 		        slantedText: true,
-		        slantedTextAngle: 30,
+		        slantedTextAngle: 30,		        
 		        viewWindowMode:'maximized' 
 		  },
 		  bubble: {
