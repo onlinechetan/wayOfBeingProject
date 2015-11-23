@@ -61,10 +61,10 @@
     </script>
 <html>
 
+
 <!-- <div id="brand_div" style="width: 1200px; height: 800px; background:url(http://placekitten.com/g/1400/900) no-repeat;">-->
-<div id="brand_div" style="width: 1200px; height: 800px; background:url(images/backgroundImage.jpg) no-repeat;">
-    <div id="chart_div" style="width: 1200px; height: 800px;">
-    </div>
+<div id="brand_div" style="background:url(images/backgroundImage.jpg) no-repeat;">
+    <div id="chart_div" style="width: 1200px; height: 800px;"></div>
 </div>
     
 <form action="/WayOfBeingResults" method="post">
