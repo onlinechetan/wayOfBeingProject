@@ -38,7 +38,7 @@
 		        viewWindowMode:'maximized'
 		  },
 		  hAxis: { 
-			  	ticks: [10,20,30,40,50,60,70,80,90],
+			  	ticks: [10,20,30,40,50,60,70,80,90],		  	
 		    	title: 'Purpose Score',
 		    	gridlines:{color: '#fefdfd'},
 		        slantedText: true,
