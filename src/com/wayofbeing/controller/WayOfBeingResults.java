@@ -37,7 +37,6 @@ public class WayOfBeingResults extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // store the results and pass in the user result to display in the results page.
         Map<String, String[]> requestParams = request.getParameterMap();
-
         int x = 0, y = 0;
         for (Iterator<String> paramIter = requestParams.keySet().iterator(); paramIter.hasNext();) {
             String param = paramIter.next();

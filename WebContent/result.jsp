@@ -44,14 +44,15 @@
         var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-      
     </script>
-    
-<html>
+    <html>
+    <head>
+    <title>Way of Being results</title>
+    </head>
+    <body>
+    <div id="chart_div" style="width: 1200px; height: 1200px;background:url(images/backgroundImage.jpg) no-repeat;"></div>
+    <form>
+    </form>
+    </body>
+    </html>
 
-<div id="brand_div" style="background:url(images/backgroundImage.jpg) no-repeat;">
-    <div id="chart_div" style="width: 1200px; height: 1200px;"></div>
-</div>
-    
-<form>
-</form>
