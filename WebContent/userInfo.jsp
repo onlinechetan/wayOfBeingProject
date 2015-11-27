@@ -14,51 +14,59 @@ h1 {
 }
 </style>
 </head>
-<form method="post" action="welcome.jsp">
 
 <body bgcolor="#E6E6FA">
-	<br>
-	
-	
-	
-	<br>
+<form method="post" action="welcome.jsp">
+
 	<div style="text-align:left">
 		<h2 >
-			Welcome to the survey of Way of Being...<br> <br>
+			<br>Welcome to the survey of Way of Being...<br> <br>
 		</h2>
 <h1>
-	Please enter information here...		
+	Please enter information		
 </h1>
 
 <table>
 
 <tr>
-<td><label>Email: </label></td><td><input type="email" name="email" required/></td>
+<td><label>Email*: </label></td><td><input type="email" name="email" required/></td>
 </tr>
 <tr>
-<td><label>Organization ID: </label></td><td><input type="text" name="orgId" required/></td>
+<td><label>Organization ID*: </label></td><td><input type="text" name="orgId" required/></td>
+</tr>
+<tr>
+<td><label>Number of years worked <br>for organization: </label></td><td><input type="text" name="yearsInOrg"/></td>
+</tr>
+
+<tr>
+<td><label>Gender:</label></td><td>
+	<input type="radio" name="sex" value="1">Male
+	<input type="radio" name="sex" value="2">Female
+	</td>
+</tr>
 <tr>
 <td><label>Age Group (Years range):</label></td><td>
-<select required>
-	<option value=""></option>
-   <option value="1525">15-25</option>
-   <option value="2635">26-35</option>
-   <option value="3645">26-45</option>
-   <option value="4655">46-45</option>
-   <option value="5665">56-65</option>
-   <option value="65+">65+</option>
+<select name="ageGroup">
+	<option value="0"></option>
+   <option value="1">15-25</option>
+   <option value="2">26-35</option>
+   <option value="3">26-45</option>
+   <option value="4">46-45</option>
+   <option value="5">56-65</option>
+   <option value="6">65+</option>
 </select></td>
 </tr>
 <tr>
-<td><label>Number of years worked <br>for organization: </label></td><td><input type="text" name="yearsInOrg" required/></td>
-<tr>
-<tr>
-<td><label>Gender:</label></td><td>
-	<input type="radio" name="sex" value="Male">Male
-	<input type="radio" name="sex" value="Female">Female
-	</td>
-<tr>
-
+<td>
+<label>Highest degree of education:</label></td><td>
+	<select name="education">
+	<option value="0"></option>
+	<option value="1">High School or Less</option>
+	<option value="2">College Graduate</option>
+	<option value="3">Post Graduate Degree</option>
+</select>
+</td>
+</tr>
 </table>
 		<br>
 		<br>
@@ -66,5 +74,6 @@ h1 {
 			<input type="submit" value="Start Survey"/>
 		</h3>
 	</div>
+	</form>
 </body>
 </html>
