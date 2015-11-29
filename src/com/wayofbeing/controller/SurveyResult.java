@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wayofbeing.service.DataBaseService;
+import com.wayofbeing.survey.SurveyBean;
+
 /**
  * Servlet implementation for calculating user survey result.
  */
@@ -30,27 +33,39 @@ public class SurveyResult extends HttpServlet {
         // store the results and pass in the user result to display in the results page.
         // persist the user result and return user bean.
         List<Object> userResult = new ArrayList<>();
+        SurveyBean survery = new SurveyBean(request);
 
         Map<String, String[]> requestParams = request.getParameterMap();
-        int x = 0, y = 0;
+        int moe = 0, moa = 0;
         for (Iterator<String> paramIter = requestParams.keySet().iterator(); paramIter.hasNext();) {
             String param = paramIter.next();
             System.out.println("Param iter is: " + param);
             System.out.println("Parameter name is: " + request.getParameter(param));
-            int choice = Integer.parseInt(param);
-            int rank = Integer.parseInt(request.getParameter(param));
-            if (choice % 2 == 0) {
-                x += rank;
-            } else {
-                y += rank;
+            try {
+                int choice = Integer.parseInt(param);
+                int rank = Integer.parseInt(request.getParameter(param));
+                if (choice % 2 == 0) {
+                    moe += rank;
+                } else {
+                    moa += rank;
+                }
+            } catch (NumberFormatException nfe) {
+                System.out.println("skip... not a survey question");
             }
         }
-        System.out.println("X axis is: " + x);// TODO: replace system out statement with loggers.
-        System.out.println("Y axis is: " + y);
 
-        userResult.add("");
-        userResult.add(x);
-        userResult.add(y);
+        System.out.println("X axis is: " + moe);// TODO: replace system out statement with loggers.
+        System.out.println("Y axis is: " + moa);
+
+        survery.setMOE(moe);
+        survery.setMOA(moa);
+
+        // push the Survey bean object to persist.
+        DataBaseService.getService().insertSurvey(survery);
+
+        userResult.add(survery.getEmailId());
+        userResult.add(moe);
+        userResult.add(moa);
         request.setAttribute("userResult", userResult);
         request.getRequestDispatcher("result.jsp").forward(request, response);
     }
