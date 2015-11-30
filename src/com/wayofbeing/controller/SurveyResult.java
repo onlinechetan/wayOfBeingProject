@@ -24,16 +24,12 @@ public class SurveyResult extends HttpServlet {
 
     /**
      * Process the request to get the choices selected by user along with rank. Add the even answers to calculate X axis (MOE) and odds to calculate Y
-     * axis
+     * axis. Store the results and pass in the user result to display in the results page.
      * 
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // store the results and pass in the user result to display in the results page.
-        // persist the user result and return user bean.
-        SurveyBean survery = new SurveyBean(request);
-
         Map<String, String[]> requestParams = request.getParameterMap();
         int moe = 0, moa = 0;
         for (Iterator<String> paramIter = requestParams.keySet().iterator(); paramIter.hasNext();) {
@@ -56,6 +52,7 @@ public class SurveyResult extends HttpServlet {
         System.out.println("X axis is: " + moe);
         System.out.println("Y axis is: " + moa);
 
+        SurveyBean survery = new SurveyBean(request);
         survery.setMOE(moe);
         survery.setMOA(moa);
 

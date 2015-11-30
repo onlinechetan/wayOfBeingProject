@@ -35,6 +35,9 @@ public class SurveyBean {
         setEducation(request.getParameter("education"));
     }
 
+    public SurveyBean() {
+    }
+
     public int getMOA() {
         return MOA;
     }
@@ -105,5 +108,9 @@ public class SurveyBean {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

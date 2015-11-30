@@ -2,8 +2,12 @@ package com.wayofbeing.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import com.wayofbeing.survey.SurveyBean;
 
@@ -68,5 +72,33 @@ public class DataBaseService {
                 se.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Retrieve survey bean objects for given criteria. Criteria is list is passed in as a parameter map.
+     * 
+     * @param reportCriteria
+     * @return
+     */
+    public List<SurveyBean> fetchReport(Map<String, String> reportCriteria) {
+        List<SurveyBean> surveys = new ArrayList<SurveyBean>();
+        // select * from Survey_results where email='email2@email.com' and org_id='gps' and gender=2 and years_in_org=4 and age_group=1 and
+        // education=3;
+        StringBuffer sqlReport = new StringBuffer();
+        sqlReport.append("select * from Survey_results");
+        SurveyBean survey = new SurveyBean();
+        try {
+            ResultSet rs = stmt.executeQuery(sqlReport.toString());
+            while (rs.next()) {
+                survey.setId(rs.getLong("id"));
+                survey.setMOA(rs.getInt("moa_score"));
+                survey.setMOE(rs.getInt("moe_score"));
+                surveys.add(survey);
+                survey = new SurveyBean();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return surveys;
     }
 }
