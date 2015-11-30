@@ -15,6 +15,7 @@ h1 {
 </style>
 </head>
 <body bgcolor="#E6E6FA">
+<div style="text-align:right"><a href="http://stp3310019:8082/wayofbeing/adminAccess.jsp">report</a></div>
 	<div style="text-align:left">
 		<h2 >
 			Welcome to the survey of Way of Being...<br> <br>

@@ -3,7 +3,7 @@
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);      
       
-      function drawChart() {		
+      function drawChart() {
 		var jsAtt = '${userResult}';
 		jsAtt =jsAtt.slice(1, jsAtt.length-1);
 	      var result = jsAtt.split(", ");

@@ -15,7 +15,7 @@ import com.wayofbeing.survey.SurveyBean;
  */
 public class DataBaseService {
     // JDBC driver name and database URL
-    static final String DB_URL = "jdbc:oracle:thin:@stp3310019:1522:xe";// "jdbc:mysql://stp3310019/XE";
+    static final String DB_URL = "jdbc:oracle:thin:@stp3310019:1522:xe";
 
     // Database credentials
     private static final String USER = "wayofbeing";
@@ -38,7 +38,6 @@ public class DataBaseService {
         System.out.println("Connecting to a selected database...");
         try {
             // Register JDBC driver
-            // Class.forName("com.mysql.jdbc.Driver").newInstance();
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
@@ -62,12 +61,9 @@ public class DataBaseService {
                 String sql = "INSERT INTO SURVEY_RESULTS (email, org_id, gender, years_in_org, age_group, education,moe_score,MOA_SCORE) values ('"
                         + survey.getEmailId() + "', '" + survey.getOrgId() + "', " + survey.getGender() + ", " + survey.getNumberOfYearsWorked()
                         + ", " + survey.getAgeGroup() + ", " + survey.getEducation() + ", " + survey.getMOE() + ", " + survey.getMOA() + ")";
-
                 System.out.println("SQL statement is: " + sql);
-
                 stmt.executeUpdate(sql);
                 System.out.println("Inserted records into the table...");
-
             } catch (SQLException se) {
                 se.printStackTrace();
             }

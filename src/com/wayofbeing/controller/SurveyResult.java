@@ -32,7 +32,6 @@ public class SurveyResult extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // store the results and pass in the user result to display in the results page.
         // persist the user result and return user bean.
-        List<Object> userResult = new ArrayList<>();
         SurveyBean survery = new SurveyBean(request);
 
         Map<String, String[]> requestParams = request.getParameterMap();
@@ -44,7 +43,7 @@ public class SurveyResult extends HttpServlet {
             try {
                 int choice = Integer.parseInt(param);
                 int rank = Integer.parseInt(request.getParameter(param));
-                if (choice % 2 == 0) {
+                if (choice % 2 == 0) { // survey question ids are 1...30
                     moe += rank;
                 } else {
                     moa += rank;
@@ -54,7 +53,7 @@ public class SurveyResult extends HttpServlet {
             }
         }
 
-        System.out.println("X axis is: " + moe);// TODO: replace system out statement with loggers.
+        System.out.println("X axis is: " + moe);
         System.out.println("Y axis is: " + moa);
 
         survery.setMOE(moe);
@@ -62,7 +61,7 @@ public class SurveyResult extends HttpServlet {
 
         // push the Survey bean object to persist.
         DataBaseService.getService().insertSurvey(survery);
-
+        List<Object> userResult = new ArrayList<>();
         userResult.add(survery.getEmailId());
         userResult.add(moe);
         userResult.add(moa);
