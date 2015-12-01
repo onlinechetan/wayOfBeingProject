@@ -21,7 +21,6 @@ public class SurveyBean {
 
     // constructor to populate survey object
     public SurveyBean(HttpServletRequest request) {
-
         setEmailId(request.getParameter("email"));
         setOrgId(request.getParameter("orgId"));
         try {

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wayofbeing.service.DataBaseService;
+import com.wayofbeing.service.StandardDataBaseService;
 import com.wayofbeing.survey.SurveyBean;
 
 /**
@@ -57,7 +57,7 @@ public class SurveyResult extends HttpServlet {
         survery.setMOA(moa);
 
         // push the Survey bean object to persist.
-        DataBaseService.getService().insertSurvey(survery);
+        StandardDataBaseService.getService().insertSurvey(survery);
         List<Object> userResult = new ArrayList<>();
         userResult.add(survery.getEmailId());
         userResult.add(moe);

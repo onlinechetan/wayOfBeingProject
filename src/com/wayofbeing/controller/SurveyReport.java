@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wayofbeing.service.DataBaseService;
+import com.wayofbeing.service.StandardDataBaseService;
 import com.wayofbeing.survey.SurveyBean;
 
 /**
@@ -40,27 +40,13 @@ public class SurveyReport extends HttpServlet {
 
         List<Object> report = new ArrayList<>();
         List<Object> survey = new ArrayList<>();
-        List<SurveyBean> surveys = DataBaseService.getService().fetchReport(reportCriteria);
+        List<SurveyBean> surveys = StandardDataBaseService.getService().fetchReport(reportCriteria);
         for (SurveyBean surveyBean : surveys) {
             survey.add(Long.toString(surveyBean.getId()));
             survey.add(surveyBean.getMOA());
             survey.add(surveyBean.getMOE());
             report.add(survey);
         }
-
-        /*
-         * survey.add("1");
-         * survey.add(10);
-         * survey.add(60);
-         * report.add(survey);
-         * 
-         * // survey.clear();
-         * survey = new ArrayList<>();
-         * survey.add("4");
-         * survey.add(30);
-         * survey.add(55);
-         * report.add(survey);
-         */
 
         request.setAttribute("userResult", report);
         request.getRequestDispatcher("report.jsp").forward(request, response);
